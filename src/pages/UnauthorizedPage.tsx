@@ -8,7 +8,7 @@ export function UnauthorizedPage() {
         Você não tem permissão para acessar esta página.
       </p>
       <a
-        href="/pisos"
+        href="/estoque"
         className="underline underline-offset-4 hover:text-primary text-sm"
       >
         Voltar ao início

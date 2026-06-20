@@ -18,11 +18,11 @@ export function Sidebar() {
   }
 
   const navItems = [
+    { to: "/estoque", label: "Gerenciar Estoque", icon: Package },
+    { to: "/pedidos", label: "Consultar/Cadastrar Pedidos", icon: Layers },
     ...(hasRole(TiposPerfil.Gestor)
       ? [{ to: "/aprovar-usuarios", label: "Aprovar Usuários", icon: Users }]
       : []),
-    { to: "/estoque", label: "Gerenciar Estoque", icon: Package },
-    { to: "/pisos", label: "Consultar/Cadastrar Pisos", icon: Layers },
   ];
 
   return (

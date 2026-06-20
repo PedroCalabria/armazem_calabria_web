@@ -37,7 +37,7 @@ export function useLogin() {
       console.log("Login bem-sucedido. Token:", token, "User:", usuario); // Log para depuração
       setUser(token, usuario);
       toast.success(`Bem-vindo, ${usuario.nome}!`);
-      navigate("/pisos", { replace: true });
+      navigate("/estoque", { replace: true });
     },
 
     onError: (error) => {

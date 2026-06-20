@@ -5,7 +5,7 @@ import { LoginPage } from "@/pages/LoginPage";
 import { SignUpPage } from "@/pages/SignUpPage";
 import { AprovarUsuariosPage } from "@/pages/AprovarUsuariosPage";
 import { EstoquePage } from "@/pages/EstoquePage";
-import { PisosPage } from "@/pages/PisosPage";
+import { PedidosPage } from "@/pages/PedidosPage";
 import { UnauthorizedPage } from "@/pages/UnauthorizedPage";
 
 /**
@@ -51,8 +51,8 @@ export const router = createBrowserRouter([
             element: <EstoquePage />,
           },
           {
-            path: "/pisos",
-            element: <PisosPage />,
+            path: "/pedidos",
+            element: <PedidosPage />,
           },
         ],
       },
@@ -60,10 +60,10 @@ export const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <Navigate to="/pisos" replace />,
+    element: <Navigate to="/estoque" replace />,
   },
   {
     path: "*",
-    element: <Navigate to="/pisos" replace />,
+    element: <Navigate to="/estoque" replace />,
   },
 ]);
