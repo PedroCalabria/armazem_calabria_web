@@ -1,5 +1,5 @@
 import { useAuth } from "@/context/auth/useAuth";
-import { authService } from "@/features/auth/services/authService";
+import { useLogout } from "@/features/auth/hooks/useLogout";
 import { Button } from "@/components/ui/button";
 
 /**
@@ -7,15 +7,8 @@ import { Button } from "@/components/ui/button";
  * Por ora, demonstra o acesso ao estado de auth e o fluxo de logout.
  */
 export function DashboardPage() {
-  const { user, logout } = useAuth();
-
-  async function handleLogout() {
-    try {
-      await authService.logout();
-    } finally {
-      logout();
-    }
-  }
+  const { user } = useAuth();
+  const handleLogout = useLogout();
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center gap-4">

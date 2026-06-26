@@ -3,19 +3,12 @@ import { Users, Package, Layers, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/context/auth/useAuth";
-import { authService } from "@/features/auth/services/authService";
+import { useLogout } from "@/features/auth/hooks/useLogout";
 import { TiposPerfil } from "@/lib/enums/tiposPerfil.enum";
 
 export function Sidebar() {
-  const { hasRole, logout } = useAuth();
-
-  async function handleLogout() {
-    try {
-      await authService.logout();
-    } finally {
-      logout();
-    }
-  }
+  const { hasRole } = useAuth();
+  const handleLogout = useLogout();
 
   const navItems = [
     { to: "/estoque", label: "Gerenciar Estoque", icon: Package },

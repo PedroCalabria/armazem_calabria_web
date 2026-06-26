@@ -43,6 +43,10 @@ export const router = createBrowserRouter([
         element: <AppLayout />,
         children: [
           {
+            index: true,
+            element: <Navigate to="/estoque" replace />,
+          },
+          {
             path: "/aprovar-usuarios",
             element: <AprovarUsuariosPage />,
           },
@@ -59,11 +63,7 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: "/",
-    element: <Navigate to="/estoque" replace />,
-  },
-  {
     path: "*",
-    element: <Navigate to="/estoque" replace />,
+    element: <Navigate to="/login" replace />,
   },
 ]);
